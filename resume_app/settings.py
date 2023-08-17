@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-v8bzoj5)*&_%x-yy7o*z-2$*m1uuo*hbtb(n)%@bboej@%wkox
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,18 +79,10 @@ WSGI_APPLICATION = 'resume_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tasnim',
-        'USER': 'tasnim_rz6t',
-        'PASSWORD': 'aOA0qccQ8j3REar1q9v3EwZKrmDYr3cT',
-        'HOST': '103.155.118.153/32',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-DATABASES["default"]=dj_database_url.parse("postgres://tasnim:aOA0qccQ8j3REar1q9v3EwZKrmDYr3cT@dpg-cjb4e39itvpc73eea9bg-a.singapore-postgres.render.com/tasnim_rz6t")
-
 
 
 # Password validation
